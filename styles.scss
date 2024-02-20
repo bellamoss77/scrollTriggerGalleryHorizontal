@@ -1,0 +1,116 @@
+@import url("https://use.typekit.net/efa7ivj.css");
+
+/*  VARIABLES & MIXINS  */
+
+$maryDaleFont: "marydale", sans-serif;
+$sunriseGradient: radial-gradient(circle, rgba(226,12,22,1) 0%, rgba(228,160,32,1) 25%, rgba(229,231,41,1) 55%, rgba(83,217,235,1) 94%);
+$darkScreen: rgba(0, 0, 0, 0.5);
+$textColorLight: #ffffff;
+$rouge: #e20c16;
+$jaune: #e5df0d;
+$vert: #0e9214;
+$bleu: #0c83c1;
+$violet: #6d0cc1;
+$containerWidth: 400%;
+
+@mixin includeWebKits($property, $value) {
+    -webkit-#{$property}: $value;
+    -moz-#{$property}: $value;
+    -o-#{$property}: $value;
+    $property: $value;
+}
+
+@mixin flexColumn($justify, $align) {
+    display: flex;
+    flex-direction: column;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@keyframes beatingHeart {
+    0% {
+        transform: scale(1);
+    }
+    20% {
+        transform: scale(1.25);
+    }
+    40% {
+        transform: scale(1);
+    }
+    60% {
+        transform: scale(1.25);
+    }
+    80% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.25);
+    }
+
+}
+
+/*  START STYLING   */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+#container {
+    @include flexColumn(center, center);
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    section {
+        @include flexColumn(center, center);
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        &:nth-child(odd) {
+            background-color: $violet;
+        }
+        &:nth-child(even) {
+            background-color: $vert;
+        }
+        &:nth-child(3n) {
+            background-color: $bleu;
+        }
+        img {
+            width: 80%;
+            height: auto;
+        }
+        h3 {
+            font-family: $maryDaleFont;
+            font-size: 3rem;
+            text-align: center;
+            padding: 5px 10px 5px 10px;
+            background-color: $darkScreen;
+            color: $textColorLight;
+            position: absolute;
+            bottom: 0%;
+            left: 5%;
+        }
+        span {
+            font-size: 5rem;
+            color: rgba(235,94,151,0.5);
+            position: absolute;
+            top: 2%;
+            right: 2%;
+            transform-origin: center;
+            &:hover {
+                cursor: pointer;
+                animation: beatingHeart 1.5s infinite;
+            }
+            &.active {
+                color: rgba(235,94,151,1)
+            }
+        }
+    }
+}

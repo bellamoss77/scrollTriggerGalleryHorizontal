@@ -1,0 +1,92 @@
+@import url("https://use.typekit.net/efa7ivj.css");
+/*  VARIABLES & MIXINS  */
+@keyframes beatingHeart {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.25);
+  }
+  40% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.25);
+  }
+  80% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.25);
+  }
+}
+/*  START STYLING   */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+}
+#container section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+#container section:nth-child(odd) {
+  background-color: #6d0cc1;
+}
+#container section:nth-child(even) {
+  background-color: #0e9214;
+}
+#container section:nth-child(3n) {
+  background-color: #0c83c1;
+}
+#container section img {
+  width: 80%;
+  height: auto;
+}
+#container section h3 {
+  font-family: "marydale", sans-serif;
+  font-size: 3rem;
+  text-align: center;
+  padding: 5px 10px 5px 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  position: absolute;
+  bottom: 0%;
+  left: 5%;
+}
+#container section span {
+  font-size: 5rem;
+  color: rgba(235, 94, 151, 0.5);
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  transform-origin: center;
+}
+#container section span:hover {
+  cursor: pointer;
+  animation: beatingHeart 1.5s infinite;
+}
+#container section span.active {
+  color: rgb(235, 94, 151);
+}/*# sourceMappingURL=styles.css.map */
